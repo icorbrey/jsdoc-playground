@@ -1,0 +1,42 @@
+.card-product {
+    border: solid 1px black;
+    flex-flow: column nowrap;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+}
+
+.card-product .image {}
+
+.card-product .content {
+    flex-flow: column nowrap;
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+}
+
+.card-product .category {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.card-product .title {
+    font-size: 1.5rem;
+}
+
+.card-product .price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-product .action {
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    padding: 1.25rem 1rem;
+    align-self: stretch;
+    background: green;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: white;
+    border: none;
+}

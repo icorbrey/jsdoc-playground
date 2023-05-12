@@ -2,4 +2,11 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
+import { toBeNone, toBeSome, toBeSomeValue } from './testing/matchers/option';
 import '@testing-library/jest-dom';
+
+expect.extend({
+    toBeNone,
+    toBeSome,
+    toBeSomeValue,
+});
