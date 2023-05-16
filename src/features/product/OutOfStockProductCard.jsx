@@ -1,6 +1,8 @@
 import { ProductCard } from './ProductCard';
 import React from 'react';
 
+/** @typedef {import('../../utilities/guid').Guid} Guid */
+
 /**
  * Displays an out of stock product card.
  * 
