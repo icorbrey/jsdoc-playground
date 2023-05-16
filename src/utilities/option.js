@@ -26,6 +26,16 @@ export const option = {
     none: () => generateOption({
         isSome: false,
     }),
+
+    /**
+     * @template T The type of the {@link Option<T>}'s value.
+     * @param {T} value The value to wrap.
+     * @returns {Option<NonNullable<T>>}
+     */
+    fromNullable: (value) =>
+        value !== undefined && value !== null
+            ? option.some(value)
+            : option.none(),
 };
 
 /**
@@ -320,9 +330,19 @@ const generateOption = (maybe) => {
         },
 
         /**
-         * @template U
-         * @param {(value: T) => U} onSome 
-         * @param {() => U} onNone 
+         * If `Some(value)`, passes the contained value to `onSome` and returns
+         * the result. Otherwise, returns the result of `onNone`.
+         * 
+         * @example
+         * const handleSome = (value) => value
+         * const handleNone = () => 'Nothing here.'
+         * 
+         * console.log(option.some('I found it!').match(handleSome, handleNone)); // 'I found it!'
+         * console.log(option.none().match(handleSome, handleNone)); // 'Nothing here.'
+         * 
+         * @template U The return type of this matcher.
+         * @param {(value: T) => U} onSome Handles the `Some(value)` case.
+         * @param {() => U} onNone Handles the `None` case.
          */
         match: (onSome, onNone) => {
             if (maybe.isSome) {

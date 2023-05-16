@@ -6,8 +6,6 @@
     display: flex;
 }
 
-.card-product .image {}
-
 .card-product .content {
     flex-flow: column nowrap;
     align-items: center;
@@ -34,9 +32,17 @@
     border-radius: 0.25rem;
     padding: 1.25rem 1rem;
     align-self: stretch;
-    background: green;
     margin-top: 1rem;
     font-size: 1rem;
-    color: white;
     border: none;
+}
+
+.card-product .action.available {
+    background: green;
+    color: white;
+}
+
+.card-product .action.out-of-stock {
+    background: lightgray;
+    color: black;
 }
